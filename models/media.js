@@ -29,6 +29,10 @@ Media.init(
                 key: 'id'
             }
         },
+        name : {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         picture: {
             type: DataTypes.TEXT,
             allowNull: true,
@@ -39,6 +43,11 @@ Media.init(
         }
     },
     {
+        hooks: {
+                // api calls to googlebooks
+                // api call to watchmode
+                beforeCreate: async ()
+        },
         sequelize,
         timestamps: true,
         createdAt: 'created_at',
