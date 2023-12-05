@@ -1,6 +1,6 @@
 const Types = require('./types');
 const Media = require('./media');
-const User = require('./user');
+const User = require('./User');
 
 Media.belongsTo(Types, { foreignKey: 'type_id'});
 Media.belongsTo(User, { foreignKey: 'user_id'});
