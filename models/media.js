@@ -3,7 +3,6 @@ const sequelize = require('../config/connection');
 const { Types } = require('./types')
 const { User } = require('./User')
 const {format} = require('date-fns')
-
 class Media extends Model {
 
 }
@@ -58,7 +57,7 @@ Media.init(
             },
                 // api calls to googlebooks
                 // api call to watchmode
-                beforeCreate: async ()
+                // beforeCreate: async ()
         },
         sequelize,
         createdAt: 'created_at',
