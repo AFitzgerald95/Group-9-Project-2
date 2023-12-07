@@ -1,14 +1,11 @@
 [
     {
-        "type": "Tv Show"
+        "medtype": "Book"
     },
     {
-        "type": "Book"
+        "medtype": "Tv Show"
     },
     {
-        "type": "Movie"
-    },
-    {
-        "type": ""
+        "medtype": "Movie"
     }
 ]
