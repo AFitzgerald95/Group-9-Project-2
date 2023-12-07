@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-
+const Types = require("./types")
+const User = require("./User")
 class Media extends Model {
 
 }
@@ -46,7 +47,7 @@ Media.init(
         hooks: {
                 // api calls to googlebooks
                 // api call to watchmode
-                beforeCreate: async ()
+                // beforeCreate: async ()
         },
         sequelize,
         timestamps: true,
