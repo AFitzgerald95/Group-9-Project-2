@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+
 const Types = require("./types")
 const User = require("./User")
 class Media extends Model {
@@ -33,6 +34,7 @@ Media.init(
         name : {
             type: DataTypes.STRING,
             allowNull: false,
+            defaultValue: "Failed to pull it"
         },
         picture: {
             type: DataTypes.TEXT,

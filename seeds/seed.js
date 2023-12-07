@@ -7,7 +7,7 @@ const typesData = require('./datatypes.json');
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
     const users = await User.bulkCreate(userData, {
-        individualhooks: true,
+        individualHooks: true,
         returning: true,
     });
     const types = await Types.bulkCreate(typesData, {
