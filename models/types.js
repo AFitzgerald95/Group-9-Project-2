@@ -17,7 +17,6 @@ Types.init(
         medtype: {
             type: DataTypes.STRING,
             allowNull: false,
-            defaultValue: 'Not Sure'
         }
     },
     {

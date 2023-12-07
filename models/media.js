@@ -1,8 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-
-const Types = require("./types")
-const User = require("./User")
+const { Types } = require('./types')
+const { User } = require('./User')
+const {format} = require('date-fns')
 class Media extends Model {
 
 }
@@ -43,18 +43,24 @@ Media.init(
         descript: {
             type: DataTypes.TEXT,
             allowNull: true,
+        },
+        created_at: {
+            type: DataTypes.DATEONLY,
+            allowNull: false,
+            defaultValue: DataTypes.NOW,
         }
     },
     {
         hooks: {
+            beforeCreate: (media, options) => {
+                media.created_at = format(new Date(), 'MM-dd-yyyy');
+            },
                 // api calls to googlebooks
                 // api call to watchmode
                 // beforeCreate: async ()
         },
         sequelize,
-        timestamps: true,
         createdAt: 'created_at',
-        dateFormat: 'MM-dd-yyyy',
         freezeTableName: true,
         underscored: true,
         modelName: 'media'
