@@ -1,11 +1,11 @@
 const router = require('express').Router();
 
 router.get("/", (req,res) => {
-    res.render("homepage",{});
-} )
-router.get("/profile", (req,res) => {
     res.render("profile",{});
 } )
+// router.get("/profile", (req,res) => {
+//     res.render("profile",{});
+// } )
 
 router.get("/login",(req,res) => {
     res.render("login")
@@ -20,6 +20,6 @@ router.get("/signout",(req,res) => {
 })
 
 router.get("/search",(req,res) => {
-    res.render("search")
+    res.render('search')
 })
 module.exports = router;
