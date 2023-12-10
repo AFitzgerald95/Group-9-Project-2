@@ -1,15 +1,20 @@
-    <div class="container">
-      <label for="Email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+<div class="row">
+  <div class="col-md-6">
+    <h2>Login</h2>
 
-      <label for="pass"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="pass" required>
-        
-      <button type="submit">Login</button>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <span class="pass">Forgot <a href="#">password?</a></span>
-    </div>
+    <form class="form login-form">
+      <div class="form-group">
+        <label for="email-login">email:</label>
+        <input class="form-input" type="text" id="email-login" />
+      </div>
+      <div class="form-group">
+        <label for="password-login">password:</label>
+        <input class="form-input" type="password" id="password-login" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">login</button>
+      </div>
+    </form>
+  </div>
 </div>
-<script src= "public/js/login.js"></script>
+<script src = "/js/login.js"></script>
