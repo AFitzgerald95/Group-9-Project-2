@@ -3,14 +3,14 @@
   <div class="col-md-6">
     <h2>Login</h2>
 
-    <form class="form login-form">
+    <form class="form loginform">
       <div class="form-group">
         <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
+        <input class="form-input" type="text" id="email" />
       </div>
       <div class="form-group">
         <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
+        <input class="form-input" type="password" id="password" />
       </div>
       <div class="form-group">
         <button class="btn btn-primary" type="submit">login</button>
@@ -18,21 +18,9 @@
     </form>
   </div>
 </div>
-<script src = "/js/login.js"></script>
-    <div class="container">
-      <form class="loginform" id="loginform" action="/api/userRoutes/login" method="post">
-        <label for="Email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" id="email">
-
-        <label for="pass"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="pass" id="password" required>
-          
-        <button type="submit" id="submit">Login</button>
-      </form>
-    </div>
 
     <div class="container" style="background-color:#f1f1f1">
       <span class="pass">Forgot <a href="#">password?</a></span>
     </div>
-<script src= "./js/login.js"></script>
 
+<script src = "/js/login.js"></script>
