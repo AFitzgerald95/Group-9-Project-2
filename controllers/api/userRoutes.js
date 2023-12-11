@@ -35,7 +35,7 @@ router.post('/logout',(req,res) => {
     if(req.session.logged_in){
         req.session.destroy(() =>{ 
             res.status(204).end()
-            alert(204 + 'Session ended')
+            console.log(204 + 'Session ended')
         });
      } else{
             res.status(404).end();
