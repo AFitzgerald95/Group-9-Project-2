@@ -1,6 +1,5 @@
 <nav>
-    <div>Shelfing</div>
-    <div>Log Out</div>
+    <button id="logout">Logout?</button>
 </nav>
 <h1>Profile Page</h1>
 <div href="" id="search">
@@ -14,4 +13,11 @@
     <input id="paramsInput" type="text" placeholder="Search">
 </div>
 <button id="paramsBtn">search</button>
-<div id="cards"></div>
+{{#each mediaEntries as |media|}}
+<div class="cards" id="{{media.type.medtype}}">
+    <h4>{{media.name}}</h4>
+    <img src="{{media.picture}}" alt="{{media.name}}">
+    <p>{{media.descript}}</p>
+</div>
+{{/each}}
+<script src="./js/profile.js"></script>
