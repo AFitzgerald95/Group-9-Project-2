@@ -14,13 +14,12 @@ router.post('/login',async(req,res) => {
         res.status(400).json({message:'Email or password is incorrect'})
         return;
     }
-    req.session.save(() => {
+    await req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
-        res.json({user:userData,message:'thank you for logging in'})
-    })    
+    }) 
+    res.json({user:userData,message:'thank you for logging in'})
     console.log(req.session)
-    console.log("TESTTEST")
 } //end Try
     catch(err){
         res.status(400).json(err);
