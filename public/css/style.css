@@ -1,5 +1,9 @@
+
+
 body {
-   
+    background-image: url("https://isp.page/news/wp-content/uploads/2023/09/The-Best-Backgrounds-for-Video-Calls-Bookshelves-and-Plants-Increase-Trust-and-Competence_65154cc7b0ce5.jpg");
+    background-size: cover;
+    z-index: -1;
 }
 
 #header-1 {
@@ -10,7 +14,7 @@ body {
 
 #loginform {
     border: solid 2px;
-    border-radius: 15px ;
+    border-radius: 15px;
     border-color: black;
     padding: 20px;
     width: 50%;
@@ -24,12 +28,21 @@ body {
     width: 51%;
     height: 25px;
     margin: auto;
-    background-color: #5286ef;  
+    background-color: #5286ef;
     border-radius: 10px;
     margin-bottom: 20px;
     margin-top: 10px;
 }
 
+#LoginTxt{
+    text-shadow: 2px 2px rgb(48, 167, 56);
+    font-size:2.8em;
+}
+
+#BookShelf{
+    text-shadow: 4px 5px rgb(163, 48, 167);
+    font-size:3em;
+}
 input {
     height: 25px;
     width: 50%;
@@ -59,4 +72,26 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.btn-color {
+    background-color: #0e1c36;
+    color: #fff;
+
+}
+
+.profile-image-pic {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+
+
+.cardbody-color {
+    background-color: #ebf2fa;
+}
+
+a {
+    text-decoration: none;
 }
