@@ -1,26 +1,28 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-router.post('/signup', async (req, res) => {
+router.post('/newuser', async (req, res) => {
     try { 
         const userData = await User.create({
             email: req.body.email,
             name: req.body.name,
             password: req.body.password
         });
-        req.session.save(() => {
+        await req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
             res.json({ user: userData, message: 'User created and logged in successfully'});
+            console.log(req.session)
         })
+        console.log("BACKHELLO")
     } catch (err) {
         res.status(500).json(err)
         console.log(err);
-        window.alert("Sorry! We were unable to create the account");
+        res.status(500).json({error: 'Internal Server Error'})
     }
-    finally {
-        Response.redirect("/")
-    }
+    // finally {
+    //     res.redirect("/profile")
+    // }
 });
 
 module.exports = router

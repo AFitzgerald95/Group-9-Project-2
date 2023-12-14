@@ -30,20 +30,18 @@ User.init(
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [12],
-      },
+      allowNull: false,    
     },
   },
   {
     hooks: {
       beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 12);
+        newUserData.password = await bcrypt.hash(newUserData.password, 14);
         return newUserData;
       },
     },
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
