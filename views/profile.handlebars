@@ -15,9 +15,11 @@
 <button id="paramsBtn">search</button>
 {{#each mediaEntries as |media|}}
 <div class="cards" id="{{media.type.medtype}}">
-    <h4>{{media.name}}</h4>
     <img src="{{media.picture}}" alt="{{media.name}}">
+    <div class="cont">
+    <h4>{{media.name}}</h4>
     <p>{{media.descript}}</p>
+    </div>
 </div>
 {{/each}}
 <script src="./js/profile.js"></script>
