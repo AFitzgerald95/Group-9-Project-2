@@ -1,18 +1,22 @@
 <nav>
     <button id="logout">Logout?</button>
 </nav>
-<h1>Profile Page</h1>
-<div href="" id="search">
-    <label for="searchInput">Find Book</label>
-    <input id="searchInput" type="text" placeholder="Search">
-</div>
-<button id="searchBtn">search</button>
+<h1 id="head">Profile Page</h1>
+    <div id="box">
+        <div id="loginform">
+            <div href="" id="search">
+                <label for="searchInput">Find Book</label>
+                <input id="searchInput" type="text" placeholder="Search">
+            </div>
+            <button id="searchBtn">search</button>
 
-<div href="" id="params">
-    <label for="searchInput">Find Video</label>
-    <input id="paramsInput" type="text" placeholder="Search">
-</div>
-<button id="paramsBtn">search</button>
+            <div href="" id="params">
+                <label for="searchInput">Find Video</label>
+                <input id="paramsInput" type="text" placeholder="Search">
+            </div>
+            <button id="paramsBtn">search</button>
+        </div>
+    </div>
 {{#each mediaEntries as |media|}}
 <div class="cards" id="{{media.type.medtype}}">
     <img src="{{media.picture}}" alt="{{media.name}}">
