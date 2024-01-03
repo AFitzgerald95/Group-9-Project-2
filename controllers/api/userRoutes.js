@@ -38,8 +38,8 @@ router.post('/logout',(req,res) => {
         });
      } else{
             res.status(404).end();
-            console.log(res.status(404))
-            alert(404 + 'Sesson ended')
+            // console.log(res.status(404))
+            console.log(404 + 'Sesson ended')
         }
     }
 )
