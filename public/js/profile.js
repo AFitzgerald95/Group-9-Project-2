@@ -1,5 +1,7 @@
 const logout = async () => {
-  const response = await fetch('/api/userRoutes/logout', {
+  const apiURL = `${window.origin}/api/userRoutes/logout`
+  console.log(apiURL)
+  const response = await fetch(apiURL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
   });

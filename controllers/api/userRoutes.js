@@ -4,22 +4,36 @@ const { User, Media, Types } = require('../../models');
 router.post('/login',async(req,res) => {
     try{
         const userData = await User.findOne({where: {email:req.body.email}})
-        console.log(userData)
-    if(!userData){
-        res.status(400).json({message:'Email or password is incorrect'})
-        return;
-    }
-    const isValid = await userData.checkPassword(req.body.password)
-    if(!isValid){
-        res.status(400).json({message:'Email or password is incorrect'})
-        return;
-    }
-    await req.session.save(() => {
-        req.session.user_id = userData.id;
-        req.session.logged_in = true;
-    }) 
-    res.json({user:userData,message:'thank you for logging in'})
-    console.log(req.session)
+        console.log("pretest", userData)
+        if(!userData){
+            res.status(400).json({message:'Email or password is incorrect'})
+            return;
+        }
+        const isValid = await userData.checkPassword(req.body.password)
+        if(!isValid){
+            res.status(400).json({message:'Email or password is incorrect'})
+            return;
+        }
+        try {
+            await new Promise((resolve, reject) => {
+                req.session.save((err) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve();
+                    }
+                });
+            });
+        
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
+        
+            res.json({ user: userData, message: 'thank you for logging in' });
+            console.log(" test 1 ", req.session.logged_in);
+            console.log(" test 2 ", req.session.user_id);
+        } catch (saveError) {
+            console.error("Error saving session: ", saveError);
+        }
 } //end Try
     catch(err){
         res.status(400).json(err);
@@ -31,6 +45,7 @@ router.post('/login',async(req,res) => {
 });//End Router.Post
 
 router.post('/logout',(req,res) => {
+    console.log('route hit')
     if(req.session.logged_in){
         req.session.destroy(() =>{ 
             res.status(204).end()
