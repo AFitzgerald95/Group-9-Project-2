@@ -5,43 +5,62 @@ let paramsBtn = document.getElementById("paramsBtn");
 const bookURL = () => {
     let search = document.getElementById('searchInput').value;
     const bookKey = "AIzaSyCWP2wkkvDpkqCGnXd_GS6WWc-tI6DKZtM";
-    let poster = "";
-    let descript = "";
     axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}=all&key=${bookKey}`)
-        .then(response => {
-            var book = response.data.items[0]
-            console.log(response.data.items)
-            const bookID = book.id
-            poster += book.volumeInfo.imageLinks.thumbnail;
-            descript += book.volumeInfo.description;
-        })
+    .then(response => {
+        const cardsEl = document.querySelector('.bookContainer');
+        
+        for(i = 0; i <= Math.min(response.data.items.length, 5); i++){
+            var book = response.data.items[i]
+            console.log(book);
 
-}
+            const newCardEl = document.createElement('div');
+            newCardEl.classList.add('bookCard');
+        
 
-const videoURL = () => {
-    const videoKey = "ohYP4vnMNvPPW1O0egOBVQfqKwvQqDOTKITGb4cI";
-    let params = document.getElementById('paramsInput').value;
-    let poster = "";
-    let descript = "";
-    let genres = " ";
-    const OT = "";
-    const title = "";
-    const OL = "";
-    let us_rating = "";
-    axios.get(`https://api.watchmode.com/v1/search/?apiKey=${videoKey}&search_field=name&search_value=${params}`)
-        .then(async response => {
-            var videoResults = response.data.title_results;
-            for(var i = 0; i<videoResults.length; i++){
-                await axios.get(`https://api.watchmode.com/v1/title/${videoResults[i].id}/details/?apiKey=${videoKey}&append_to_response=sources`)
-                .then(data => {
-                    console.log(data)
-                    poster += data.poster
-                    descript += data.plot_overview
-                }).catch(err => {
-                    console.log(err)
-                })}
-        })
-}
+            const bookImgUrl = book.volumeInfo.imageLinks.smallThumbnail
+            if (bookImgUrl) {
+            const bookImgEl = document.createElement('img');
+            bookImgEl.classList.add('image');
+            bookImgEl.src = bookImgUrl;
+            newCardEl.appendChild(bookImgEl);
+            }
+            
+            const bookName = book.volumeInfo.title
+            if (bookName) {
+            console.log(bookName);
+            var nameEl = document.createElement('h4');
+            nameEl.classList.add('bookName')
+            nameEl.textContent = bookName;
+            newCardEl.appendChild(nameEl);
+            }
+
+            const bookDescription = book.searchInfo.textSnippet;
+            if (bookDescription) {
+                const descriptionEl = document.createElement('p');
+                descriptionEl.classList.add('description')
+                descriptionEl.textContent = bookDescription;
+                newCardEl.appendChild(descriptionEl);
+            }
+            
+            const bookLink = book.volumeInfo.canonicalVolumeLink
+            if (bookLink) {
+                const linkEl = document.createElement('button');
+                linkEl.classList.add('link')
+                if (cardsEl) {
+                    cardsEl.appendChild(linkEl);
+                    linkEl.addEventListener('click', () => 
+                    window.location.href = bookLink
+                    )
+                }
+                
+                newCardEl.appendChild(linkEl);
+                linkEl.textContent = 'Link For Book';
+            }
+            cardsEl.appendChild(newCardEl)
+        }
+        }).catch(error => {
+            console.error('Error fetching data:', error);
+        });
+    }
 
 searchBtn.addEventListener('click', bookURL);
-paramsBtn.addEventListener('click', videoURL);
