@@ -1,5 +1,5 @@
 const logout = async () => {
-  const apiURL = `${window.origin}/api/userRoutes/logout`
+  const apiURL = `${window.origin}/api/userRoutes/login`
   console.log(apiURL)
   const response = await fetch(apiURL, {
     method: 'POST',

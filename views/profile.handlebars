@@ -17,15 +17,8 @@
             <button id="paramsBtn">search</button>
         </div>
     </div>
-{{#each mediaEntries as |media|}}
-<div class="cards" id="{{media.type.medtype}}">
-    <img src="{{media.picture}}" alt="{{media.name}}">
-    <div class="cont">
-    <h4>{{media.name}}</h4>
-    <p>{{media.descript}}</p>
-    </div>
-</div>
-{{/each}}
+<div class="bookContainer"></div>
+<div class="videoContainer"></div>
 <script src="./js/profile.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="./js/axios.js"></script>
