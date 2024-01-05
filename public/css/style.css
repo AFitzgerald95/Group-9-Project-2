@@ -97,15 +97,11 @@ a {
 }
 
 .bookContainer, .videoContainer {
-    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border: 5px solid black;
-    width: auto; */
     display: flex;
     flex-wrap: wrap;
 }
 
-.bookCard {
+.bookCard, .videoCard {
     margin: 2em 0 0 8em;
     background-color: #FBE8D4;
     border: solid 2px;
@@ -121,7 +117,7 @@ a {
     border-radius: 10px;
 }
 
-.bookName {
+.bookName, .videoName {
     text-align: center;
 }
 
