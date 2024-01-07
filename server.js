@@ -8,7 +8,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const exphbs = require("express-handlebars");
 const hbs = exphbs.create({})
 //end Require
-
+//testing comment
 
 //Begin
 const app = express();
