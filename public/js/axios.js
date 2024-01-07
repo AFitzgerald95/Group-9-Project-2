@@ -60,6 +60,7 @@ const bookURL = () => {
         }
         }).catch(error => {
             console.error('Error fetching data:', error);
+            console.log('testtest')
         });
     }
 

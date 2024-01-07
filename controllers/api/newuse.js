@@ -19,6 +19,7 @@ router.post('/newuser', async (req, res) => {
         res.status(500).json(err)
         console.log(err);
         res.status(500).json({error: 'Internal Server Error'})
+        console.log('testtest')
     }
     // finally {
     //     res.redirect("/profile")
