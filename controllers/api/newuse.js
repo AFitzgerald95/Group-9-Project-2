@@ -12,6 +12,7 @@ router.post('/newuser', async (req, res) => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
             res.json({ user: userData, message: 'User created and logged in successfully'});
+            console.log("hello")
             console.log(req.session)
         })
         console.log("BACKHELLO")
