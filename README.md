@@ -10,6 +10,7 @@
 [Credits](#Credits)<br />
 [License](#License)<br />
 [Deployed link](#Deployed)<br />
+[Future Development](#Future) <br />
 [Feedback!](#feedback)
 
 
@@ -44,6 +45,10 @@ This project is licensed under the [![License: MIT](https://img.shields.io/badge
 # Deployed link
 
 https://obscure-brook-37683-7269a533acb8.herokuapp.com/    
+
+# Future
+
+In the furthering of this project, we would like to build the program into more of a social media platform.  Currently, it is solely an individual program to log your data.  It would also benefit from a validation check of some kind to double check that the item that the search populated was truly the item you watched.  
 
 ## Feedback
 
