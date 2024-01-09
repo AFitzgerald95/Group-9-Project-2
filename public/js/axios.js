@@ -63,7 +63,7 @@ const bookURL = () => {
     }
 
     const videoURL = () => {
-        const videoKey = "kAkSWPYcQeHHMrCJU5ONXuwRIH85vNjxsRjumdtX ";
+        const videoKey = "kAkSWPYcQeHHMrCJU5ONXuwRIH85vNjxsRjumdtX";
         let params = document.getElementById('paramsInput').value;
         axios.get(`https://api.watchmode.com/v1/search/?apiKey=${videoKey}&search_field=name&search_value=${params}`)
             .then(async response => {
