@@ -1,5 +1,7 @@
 # Project 2 - Bookshelf
 
+ ![Alt text](/deployed%20image.png)
+
 # Table of Contents
 
 [Description](#Description) <br />
