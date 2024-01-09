@@ -22,7 +22,7 @@ The biggest thing we learned was how to work better in a team.  We also had a lo
 
 # Installation
 
-The installation on this project started originally by assigning roles to each individual to work on, or to research if they were not aware of how to create that piece.  Then we had one person make the general back end model data as well as the seeds.  Another individual worked on the connections and the server files themselves.  While all of this was happening, we had some members working on the front end work on Handlebars and the CSS.  Then we had a lot of errors to troubleshoot.  We spent the rest of our time working on errors from working seperately.  
+The installation on this project started originally by assigning roles to each individual to work on, or to research if they were not aware of how to create that piece.  Then we had one person make the general back end model data as well as the seeds.  Another individual worked on the connections and the server files themselves.  While all of this was happening, we had some members working on the front end work on Handlebars and the CSS.  Then we had a lot of errors to troubleshoot. We spent the rest of our time correcting the errors that occurred will working separately.
 
 # Usage
 
